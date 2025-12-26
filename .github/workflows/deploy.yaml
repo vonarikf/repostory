@@ -20,3 +20,6 @@ jobs:
         run: docker build -t vonarik/pyrhonapi:latest .
       - name: Push Docker image
         run: docker push vonarik/pyrhonapi:latest
+      - name: Trigger Render Deploy
+        run: | 
+          curl -X POST https://api.render.com/deploy/srv-d52pqg3uibrs73e4ppf0?key=Ki6F8SKtFmk
